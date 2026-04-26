@@ -1,0 +1,19 @@
+name: CI Pipeline
+
+on: push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Make setup
+        run: make setup
+
+      - name: Make lint
+        run: make lint
+
+      - name: Make test
+        run: make test
